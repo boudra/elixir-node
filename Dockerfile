@@ -1,6 +1,7 @@
 FROM debian:jessie
 
 ENV LANG=C.UTF-8
+WORKDIR /elixir
 
 RUN echo "deb http://packages.erlang-solutions.com/debian jessie contrib" >> /etc/apt/sources.list && \
     apt-key adv --fetch-keys http://packages.erlang-solutions.com/debian/erlang_solutions.asc && \
