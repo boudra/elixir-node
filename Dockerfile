@@ -30,7 +30,7 @@ RUN echo "deb http://packages.erlang-solutions.com/debian jessie contrib" >> /et
     ln -s /elixir/bin/iex /usr/local/bin/iex && \
     /usr/local/bin/mix local.hex --force && \
     /usr/local/bin/mix local.rebar --force && \
-    wget https://deb.nodesource.com/node_9.x/pool/main/n/nodejs/nodejs_9.4.0-1nodesource1_amd64.deb  --no-check-certificate && \
+    wget https://deb.nodesource.com/node_9.x/pool/main/n/nodejs/nodejs_8.7.0-1nodesource1_amd64.deb  --no-check-certificate && \
     dpkg -i nodejs_8.7.0-1nodesource1_amd64.deb && \
     rm nodejs_8.7.0-1nodesource1_amd64.deb && \
     echo "prefix = ${HOME}/.node" > ~/.npmrc && \
