@@ -21,7 +21,7 @@ RUN echo "deb http://packages.erlang-solutions.com/debian jessie contrib" >> /et
         unzip \
         g++ && \
         apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    wget -q https://github.com/elixir-lang/elixir/releases/download/v1.6.0/Precompiled.zip && \
+    wget -q https://github.com/elixir-lang/elixir/releases/download/v1.6.3/Precompiled.zip && \
     unzip Precompiled.zip && \
     rm -f Precompiled.zip && \
     ln -s /elixir/bin/elixirc /usr/local/bin/elixirc && \
