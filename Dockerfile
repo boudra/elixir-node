@@ -18,6 +18,7 @@ RUN echo "deb http://packages.erlang-solutions.com/debian jessie contrib" >> /et
         rlwrap \
         netbase \
         wget \
+        unzip \
         g++ && \
         apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     wget -q https://github.com/elixir-lang/elixir/releases/download/v1.6.0/Precompiled.zip && \
