@@ -19,6 +19,7 @@ RUN echo "deb http://packages.erlang-solutions.com/debian jessie contrib" >> /et
         rlwrap \
         netbase \
         wget \
+        ruby \
         unzip \
         python-minimal \
         g++ && \
@@ -37,5 +38,7 @@ RUN echo "deb http://packages.erlang-solutions.com/debian jessie contrib" >> /et
     rm nodejs_8.7.0-1nodesource1_amd64.deb && \
     echo "prefix = ${HOME}/.node" > ~/.npmrc && \
     PATH="$HOME/.node/bin:$PATH"
+
+RUN gem install bundler
 
 CMD ["bin/bash"]
