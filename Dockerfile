@@ -19,6 +19,7 @@ RUN apt-get update && \
         netbase \
         wget \
         ruby \
+        ruby-dev \
         unzip \
         python-minimal \
         libwxgtk3.0-0v5 \
