@@ -3,7 +3,7 @@ FROM debian:stretch
 ENV LANG=C.UTF-8
 WORKDIR /elixir
 
-RUN echo "deb http://packages.erlang-solutions.com/debian jessie contrib" >> /etc/apt/sources.list && \
+RUN echo "deb http://packages.erlang-solutions.com/debian stretch contrib" >> /etc/apt/sources.list && \
     apt-key adv --fetch-keys http://packages.erlang-solutions.com/debian/erlang_solutions.asc && \
     apt-get -qq update && apt-get install --force-yes -y --no-install-recommends \
         esl-erlang=1:20.2.2 \
