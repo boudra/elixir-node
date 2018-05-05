@@ -10,6 +10,8 @@ RUN apt-get update && \
         curl \
         git \
         build-essential \
+        zlib1g-dev \
+        liblzma-dev \
         pkg-config \
         mysql-client \
         xfonts-base \
