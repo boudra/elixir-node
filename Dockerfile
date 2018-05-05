@@ -1,4 +1,4 @@
-FROM debian:jessie
+FROM debian:stretch
 
 ENV LANG=C.UTF-8
 WORKDIR /elixir
