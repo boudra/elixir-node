@@ -45,6 +45,6 @@ RUN apt-get update && \
     echo "prefix = ${HOME}/.node" > ~/.npmrc && \
     PATH="$HOME/.node/bin:$PATH"
 
-RUN gem install bundler
+RUN gem install bundler -v 1.14.5
 
 CMD ["bin/bash"]
