@@ -28,8 +28,8 @@ RUN apt-get update && \
         libsctp1 \
         g++ && \
         apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    wget https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_21.1-1~ubuntu~bionic_amd64.deb && \
-    dpkg -i esl-erlang_21.1-1~ubuntu~bionic_amd64.deb && \
+    wget -O erlang.deb https://packages.erlang-solutions.com/erlang/debian/pool/esl-erlang_22.0.2-1~ubuntu~bionic_amd64.deb && \
+    dpkg -i erlang.deb && \
     wget -q https://github.com/elixir-lang/elixir/releases/download/v1.8.2/Precompiled.zip && \
     unzip Precompiled.zip && \
     rm -f Precompiled.zip && \
