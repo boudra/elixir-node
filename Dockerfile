@@ -30,7 +30,7 @@ RUN apt-get update && \
         apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
     wget https://packages.erlang-solutions.com/erlang/esl-erlang/FLAVOUR_1_general/esl-erlang_21.1-1~ubuntu~bionic_amd64.deb && \
     dpkg -i esl-erlang_21.1-1~ubuntu~bionic_amd64.deb && \
-    wget -q https://github.com/elixir-lang/elixir/releases/download/v1.7.4/Precompiled.zip && \
+    wget -q https://github.com/elixir-lang/elixir/releases/download/v1.8.2/Precompiled.zip && \
     unzip Precompiled.zip && \
     rm -f Precompiled.zip && \
     ln -s /elixir/bin/elixirc /usr/local/bin/elixirc && \
