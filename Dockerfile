@@ -27,10 +27,13 @@ RUN apt-get update && \
         libwxgtk3.0-0v5 \
         libsctp1 \
         g++ && \
-        apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* && \
-    wget -O erlang.deb https://packages.erlang-solutions.com/erlang/debian/pool/esl-erlang_22.0.2-1~ubuntu~bionic_amd64.deb && \
+        apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+
+RUN wget https://packages.erlang-solutions.com/erlang/debian/pool/esl-erlang_22.1.8-1~ubuntu~bionic_amd64.deb -O erlang.deb && \
     dpkg -i erlang.deb && \
-    wget -q https://github.com/elixir-lang/elixir/releases/download/v1.8.2/Precompiled.zip && \
+    rm erlang.deb
+
+RUN wget -q https://github.com/elixir-lang/elixir/releases/download/v1.9.4/Precompiled.zip && \
     unzip Precompiled.zip && \
     rm -f Precompiled.zip && \
     ln -s /elixir/bin/elixirc /usr/local/bin/elixirc && \
@@ -38,10 +41,11 @@ RUN apt-get update && \
     ln -s /elixir/bin/mix /usr/local/bin/mix && \
     ln -s /elixir/bin/iex /usr/local/bin/iex && \
     /usr/local/bin/mix local.hex --force && \
-    /usr/local/bin/mix local.rebar --force && \
-    wget https://deb.nodesource.com/node_8.x/pool/main/n/nodejs/nodejs_8.7.0-1nodesource1_amd64.deb  --no-check-certificate && \
-    dpkg -i nodejs_8.7.0-1nodesource1_amd64.deb && \
-    rm nodejs_8.7.0-1nodesource1_amd64.deb && \
+    /usr/local/bin/mix local.rebar --force
+
+RUN wget https://deb.nodesource.com/node_10.x/pool/main/n/nodejs/nodejs_10.16.3-1nodesource1_amd64.deb --no-check-certificate -O node.deb && \
+    dpkg -i node.deb && \
+    rm node.deb && \
     echo "prefix = ${HOME}/.node" > ~/.npmrc && \
     PATH="$HOME/.node/bin:$PATH"
 
